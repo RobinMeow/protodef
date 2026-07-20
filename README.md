@@ -16,3 +16,10 @@
 - background music
 - hud visuals (tower level)
 
+
+## Style Guide
+
+csharp: PascalCase
+Nodes: PascalCase
+assets (files and directories): snake_case
+thrid party assets: //addons/

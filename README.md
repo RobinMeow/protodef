@@ -32,3 +32,11 @@ res://assets/kenney_tower-defense-kit/Models/FBX format/Textures/colormap.png: T
 res://assets/kenney_tower-defense-kit/Models/GLB format/Textures/colormap.png: Texture detected as used in 3D. Enabling mipmap generation and setting the texture compression mode to VRAM Compressed (S3TC/ETC/BPTC).
 res://assets/kenney_tower-defense-kit/Models/OBJ format/Textures/colormap.png: Texture detected as used in 3D. Enabling mipmap generation and setting the texture compression mode to VRAM Compressed (S3TC/ETC/BPTC).
 ```
+
+## Keymaps
+
+hold ctrl + mb3 to have fine zoom in 3d view
+hold mb3 to orbit
+hold shift + mb3 to pan
+press 7 for a top down view orthogonal
+

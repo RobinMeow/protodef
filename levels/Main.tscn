@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dvsjyikq1tvxv"]
 
 [ext_resource type="MeshLibrary" uid="uid://cgh8a4oke5687" path="res://assets/tiles.tres" id="1_s5j47"]
+[ext_resource type="Script" uid="uid://1qw1i6mmvldl" path="res://EnemySpawn.cs" id="2_2jfjj"]
+[ext_resource type="PackedScene" uid="uid://bdhp4vwqftesj" path="res://enemy.tscn" id="3_ntnxr"]
 
 [sub_resource type="Curve3D" id="Curve3D_s5j47"]
 _data = {
@@ -22,3 +24,13 @@ data = {
 [node name="Path3D" type="Path3D" parent="." unique_id=461532176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.12, -0.5)
 curve = SubResource("Curve3D_s5j47")
+
+[node name="EnemySpawn" type="Node3D" parent="." unique_id=564332881 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.12, -0.5)
+script = ExtResource("2_2jfjj")
+Enemy = ExtResource("3_ntnxr")
+Path = NodePath("../Path3D")
+
+[node name="Timer" type="Timer" parent="EnemySpawn" unique_id=731927823]
+wait_time = 3.0
+autostart = true

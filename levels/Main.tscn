@@ -4,6 +4,19 @@
 [ext_resource type="Script" uid="uid://1qw1i6mmvldl" path="res://EnemySpawn.cs" id="2_2jfjj"]
 [ext_resource type="PackedScene" uid="uid://bdhp4vwqftesj" path="res://enemy.tscn" id="3_ntnxr"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2jfjj"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ntnxr"]
+sky_material = SubResource("ProceduralSkyMaterial_2jfjj")
+
+[sub_resource type="Environment" id="Environment_lbxsr"]
+background_mode = 2
+sky = SubResource("Sky_ntnxr")
+ssao_enabled = true
+glow_enabled = true
+
 [sub_resource type="Curve3D" id="Curve3D_s5j47"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.2, 0, 0, 0, 0, 0, 0, 0, 0, 9.2, 0, 0),
@@ -12,6 +25,9 @@ _data = {
 point_count = 2
 
 [node name="Main" type="Node2D" unique_id=929359324]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=788447551]
+environment = SubResource("Environment_lbxsr")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=865545866]
 mesh_library = ExtResource("1_s5j47")
@@ -34,3 +50,7 @@ Path = NodePath("../Path3D")
 [node name="Timer" type="Timer" parent="EnemySpawn" unique_id=731927823]
 wait_time = 3.0
 autostart = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1572156163]
+transform = Transform3D(0.70710677, -0.49999994, 0.49999994, 0, 0.7071067, 0.7071067, -0.70710677, -0.49999994, 0.49999994, 0, 2, 0)
+shadow_enabled = true

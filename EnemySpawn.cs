@@ -6,10 +6,10 @@ public partial class EnemySpawn : Node
 {
     ///<summary>The enemy to spawn.</summary>
     [Export]
-    public PackedScene Enemy = null!;
+    PackedScene Enemy = null!;
 
     [Export]
-    public Path3D Path = null!;
+    Path3D Path = null!;
 
     Timer timer = null!;
 

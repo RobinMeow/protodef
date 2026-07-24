@@ -6,17 +6,17 @@ public partial class EnemySpawn : Node
 {
     ///<summary>The enemy to spawn.</summary>
     [Export]
-    public PackedScene Enemy;
+    public PackedScene Enemy = null!;
 
     [Export]
-    public Path3D Path;
+    public Path3D Path = null!;
 
-    private Timer timer;
+    Timer timer = null!;
 
     public override void _Ready()
     {
-        Debug.Assert(Path != null, $"{nameof(Path)} is required.");
-        Debug.Assert(Enemy != null, $"{nameof(Enemy)} is required.");
+        Assert.NotNull(Enemy, nameof(Enemy));
+        Assert.NotNull(Path, nameof(Path));
 
         timer = GetNode<Timer>("Timer");
         timer.Timeout += OnSpawn;

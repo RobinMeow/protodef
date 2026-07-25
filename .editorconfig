@@ -2,3 +2,17 @@ root = true
 
 [*]
 charset = utf-8
+
+# Default severity for analyzer diagnostics with category 'Style'
+# e.g. simplified new (); expressions to = [];
+dotnet_analyzer_diagnostic.category-Style.severity = silent
+
+# Default severity for all analyzer diagnostics
+# change to warning if it causes issues
+dotnet_analyzer_diagnostic.severity = error
+
+
+# CA1050: Declare types in namespaces
+# Godot specific. Dont care about a namespace at root level.
+dotnet_diagnostic.CA1050.severity = silent
+

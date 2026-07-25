@@ -1,23 +1,40 @@
-using Godot;
 using System;
+using Godot;
 
 public partial class Enemy : PathFollow3D
 {
     [Export]
-    public float Speed = 1.7f;
+    float speed = 1.0f;
 
-	public override void _Ready()
-	{
+    [Export]
+    EnemyHealth health = null!; // TODO: warning message
+
+    public override void _Ready()
+    {
         Loop = false;
-	}
+        health.Depleted += OnDeath;
+    }
 
-	public override void _Process(double delta)
-	{
-        Progress += Speed * (float)delta;
+    public override void _Process(double delta)
+    {
+        Progress += speed * (float)delta;
 
-        bool end_reached = ProgressRatio >= 1.0f;
+        bool dest_reached = ProgressRatio >= 1.0f;
 
-        if (end_reached)
+        if (dest_reached)
             QueueFree();
-	}
+    }
+
+    void OnDeath(float overkill_amount)
+    {
+        health.Depleted -= OnDeath;
+        // TODO: expose signal (e.g. dying sound, kill points)
+        QueueFree();
+    }
+
+    public override void _ExitTree()
+    {
+        health.Depleted -= OnDeath;
+        base._ExitTree();
+    }
 }

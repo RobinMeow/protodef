@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cctysd0feao50"]
+
+[ext_resource type="PackedScene" uid="uid://cyivwxpb70ggm" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ammo-arrow.glb" id="1_e7peq"]
+[ext_resource type="Script" uid="uid://c0i2aby16qvqb" path="res://Projectile.cs" id="2_1cf02"]
+
+[node name="weapon-ammo-arrow2" unique_id=1290992493 instance=ExtResource("1_e7peq")]
+script = ExtResource("2_1cf02")
+
+[node name="weapon-ammo-arrow" parent="." index="0" unique_id=643225450]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

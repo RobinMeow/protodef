@@ -9,6 +9,7 @@
 - health system (how many unit one may miss)
 - tower attack/focus system onto the units
 - tower placement
+- weapon scene (it has `weapon-ballista` (rotatabe) which needs to be ontop of `weapon-turret` and spawn location for arrows as child of the `weapon-ballista`)
 - per kill counter (points) which can be traded into towers
 - start with enough points for free to make one tower
 
@@ -40,3 +41,7 @@ hold mb3 to orbit
 hold shift + mb3 to pan
 press 7 for a top down view orthogonal
 
+
+## Low Prio
+
+- arrows should fly at a straight line. For that it would need to request the future target dest from the target enemy (which in turn optionally could be extended with out of range behavior) to fire the arrow in a straight line. For now I'm just gonna increase the speed to make it look more straigt

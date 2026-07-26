@@ -6,7 +6,7 @@ using Godot;
 public partial class Weapon : Node3D
 {
     [Export]
-    float fire_rate = 1.6f;
+    float fire_rate = 1f;
 
     [Export]
     Timer fire_rate_timer = null!;
@@ -99,17 +99,30 @@ public partial class Weapon : Node3D
         if (!TryGetTarget(out Hitbox target)) // TODO: cache curr target
             return;
 
-        AimAt(target);
+        AimAt(target, (float)delta);
     }
 
-    void AimAt(Hitbox target)
+    void AimAt(Hitbox target, double delta) // Notice 'delta' is now required
     {
         Vector3 simulate_same_height_target_pos = new Vector3(
             target.GlobalPosition.X,
-            pivot.GlobalPosition.Y, // raise height to our height so the weapon does not pitch forward
+            pivot.GlobalPosition.Y,
             target.GlobalPosition.Z
         );
-        pivot.LookAt(simulate_same_height_target_pos, Vector3.Up, useModelFront: true);
+
+        Transform3D target_transform = pivot.GlobalTransform.LookingAt(
+            simulate_same_height_target_pos,
+            Vector3.Up,
+            useModelFront: true
+        );
+
+        Quaternion currentQuat = pivot.GlobalTransform.Basis.GetRotationQuaternion();
+        Quaternion targetQuat = target_transform.Basis.GetRotationQuaternion();
+
+        const float aimSpeed = 8.0f;
+        Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aimSpeed * (float)delta);
+
+        pivot.GlobalTransform = new Transform3D(new Basis(smoothedQuat), pivot.GlobalPosition);
     }
 
     public override void _ExitTree()

@@ -3,7 +3,7 @@ using Godot;
 
 public partial class EnemyHealth : Node
 {
-    const float default_health = 2.0f;
+    const float default_health = 20.0f;
 
     [Export]
     float max_health = default_health;

@@ -15,7 +15,7 @@ public partial class Tower : Node3D
     PackedScene projectile = null!;
 
     [Export]
-    Marker3D projectile_spawn = null!;
+    Weapon weapon = null!;
 
     readonly List<Hitbox> targets = new();
 
@@ -75,9 +75,10 @@ public partial class Tower : Node3D
     void FireAt(Hitbox target)
     {
         Projectile projectile = this.projectile.Instantiate<Projectile>();
-        projectile.SetTarget(target); // TODO: initilisation at runtime seems to be lacking. perhaps use ProjectileInit struct pattern?
+        projectile.SetTarget(target);
+        // TODO: initilisation at runtime seems to be lacking. perhaps use ProjectileInit struct pattern?
         GetTree().Root.AddChild(projectile);
-        projectile.GlobalPosition = projectile_spawn.GlobalPosition;
+        projectile.GlobalPosition = weapon.SpawnPos;
     }
 
     void OnAreaExit(Node3D area)

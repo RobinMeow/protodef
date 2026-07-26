@@ -63,9 +63,10 @@ tasks can be split it smaller tasks and solved independently. e.g. you can imple
 
 ### weapon
 
-- [ ] **WIP by Ribyn** weapon visual/scene is missing on the towers. ballistics appear out of nowhere _(assets are available)_ (attached static to the tower) (it has `weapon-ballista` (rotatable) which needs to be ontop of `weapon-turret` and spawn location for arrows as child of the `weapon-ballista`)
-- [ ] extract the weapon logic (firing and spawning ballistics is reponsibility of the weapon which does not yet exist so the tower does)
+- [x] add weapon mesh to tower and move spawn pos responsibility to weapon script
+- [ ] extract the weapon logic (firing is reponsibility of the weapon which does not yet exist so the tower does)
 - [ ] weapon can be made rotatable (no longer static) and using the LookAt() fn to aim at the unit which is currently has in focus
+- [ ] balista-bow is seprate from the horizntal rotating base so the bow can rotate up/down and the bose horizontally
 
 > the weapon will be a child node of the tower scene
 
@@ -88,3 +89,4 @@ tasks can be split it smaller tasks and solved independently. e.g. you can imple
 - large enough maps, which require camera movements
 - oblivion/space background (just an idea, to make the game look better, we dont have to bother using the gridmap making visual pleasing environments, if we can just make the line and buildable tiles and everything around it is "space")
 - using the assets for more levels/maps
+- use wood structures for incremental tower building

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ckermk1weykkd"]
+
+[ext_resource type="PackedScene" uid="uid://ci1qkbl16kq51" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ballista.glb" id="1_7q3s7"]
+[ext_resource type="Script" uid="uid://bpc0g1j2kcx51" path="res://weapons/Weapon.cs" id="2_pxh0k"]
+
+[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("spawn") instance=ExtResource("1_7q3s7")]
+script = ExtResource("2_pxh0k")
+spawn = NodePath("weapon-ballista/arrow/Marker3D")
+
+[node name="weapon-ballista" parent="." index="0" unique_id=652944233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Marker3D" type="Marker3D" parent="weapon-ballista/arrow" parent_id_path=PackedInt32Array(1047374090) index="0" unique_id=1006281060]

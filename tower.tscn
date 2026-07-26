@@ -2,29 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://byyismyen5p8r" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-a.glb" id="1_k1sas"]
 [ext_resource type="Script" uid="uid://dcecgo17c83j1" path="res://Tower.cs" id="2_vedim"]
-[ext_resource type="PackedScene" uid="uid://cctysd0feao50" path="res://Projectile.tscn" id="3_stebd"]
 [ext_resource type="PackedScene" uid="uid://ckermk1weykkd" path="res://weapons/weapon.tscn" id="4_jbe1c"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_cq500"]
-height = 1.0
-radius = 2.0
-
-[node name="tower-round-build-a2" unique_id=895179369 node_paths=PackedStringArray("weapon") instance=ExtResource("1_k1sas")]
+[node name="tower-round-build-a2" unique_id=895179369 instance=ExtResource("1_k1sas")]
 script = ExtResource("2_vedim")
-projectile = ExtResource("3_stebd")
-weapon = NodePath("Weapon")
 
 [node name="Weapon" parent="." index="0" unique_id=1877133297 instance=ExtResource("4_jbe1c")]
 
 [node name="tower-round-build-a" parent="." index="1" unique_id=539844172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-
-[node name="RangeArea" type="Area3D" parent="." index="2" unique_id=1775315272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RangeArea" index="0" unique_id=2008578126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CylinderShape3D_cq500")
-
-[node name="FireRateTimer" type="Timer" parent="." index="3" unique_id=632816531]
-wait_time = 1.6

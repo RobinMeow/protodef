@@ -64,8 +64,8 @@ tasks can be split it smaller tasks and solved independently. e.g. you can imple
 ### weapon
 
 - [x] add weapon mesh to tower and move spawn pos responsibility to weapon script
-- [ ] extract the weapon logic (firing is reponsibility of the weapon which does not yet exist so the tower does)
-- [ ] weapon can be made rotatable (no longer static) and using the LookAt() fn to aim at the unit which is currently has in focus
+- [x] extract the weapon logic from tower to weapon
+- [ ] **WIP by Ribyn** weapon can be made rotatable (no longer static) and using the LookAt() fn to aim at the unit which is currently has in focus
 - [ ] balista-bow is seprate from the horizntal rotating base so the bow can rotate up/down and the bose horizontally
 
 > the weapon will be a child node of the tower scene

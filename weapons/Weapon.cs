@@ -110,24 +110,51 @@ public partial class Weapon : Node3D
 
     void AimAt(Hitbox target, double delta)
     {
-        Vector3 simulate_same_height_target_pos = new Vector3(
-            target.GlobalPosition.X,
-            pivot_yaw.GlobalPosition.Y,
-            target.GlobalPosition.Z
-        );
+        AimYaw();
+        AimPitch();
 
-        Transform3D target_transform = pivot_yaw.GlobalTransform.LookingAt(
-            simulate_same_height_target_pos,
-            Vector3.Up,
-            useModelFront: true
-        );
+        void AimYaw()
+        {
+            Vector3 simulate_same_height_target_pos = new Vector3(
+                target.GlobalPosition.X,
+                pivot_yaw.GlobalPosition.Y,
+                target.GlobalPosition.Z
+            );
+            Transform3D target_transform = pivot_yaw.GlobalTransform.LookingAt(
+                simulate_same_height_target_pos,
+                Vector3.Up,
+                useModelFront: true
+            );
+            Quaternion currentQuat = pivot_yaw.GlobalTransform.Basis.GetRotationQuaternion();
+            Quaternion targetQuat = target_transform.Basis.GetRotationQuaternion();
+            Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aim_speed * (float)delta);
+            pivot_yaw.GlobalTransform = new Transform3D(
+                new Basis(smoothedQuat),
+                pivot_yaw.GlobalPosition
+            );
+        }
 
-        Quaternion currentQuat = pivot_yaw.GlobalTransform.Basis.GetRotationQuaternion();
-        Quaternion targetQuat = target_transform.Basis.GetRotationQuaternion();
+        void AimPitch()
+        {
+            Transform3D target_vertical_transform = pivot_pitch.GlobalTransform.LookingAt(
+                target.GlobalPosition,
+                Vector3.Up,
+                useModelFront: true
+            );
 
-        Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aim_speed * (float)delta);
+            Quaternion current_pitch_quat =
+                pivot_pitch.GlobalTransform.Basis.GetRotationQuaternion();
+            Quaternion target_pitch_quat = target_vertical_transform.Basis.GetRotationQuaternion();
+            Quaternion smoothed_pitch_quat = current_pitch_quat.Slerp(
+                target_pitch_quat,
+                aim_speed * (float)delta
+            );
 
-        pivot_yaw.GlobalTransform = new Transform3D(new Basis(smoothedQuat), pivot_yaw.GlobalPosition);
+            pivot_pitch.GlobalTransform = new Transform3D(
+                new Basis(smoothed_pitch_quat),
+                pivot_pitch.GlobalPosition
+            );
+        }
     }
 
     public override void _ExitTree()

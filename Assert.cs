@@ -5,16 +5,30 @@ using System.Runtime.CompilerServices;
 public static class Assert
 {
     [Conditional("DEBUG")]
-    public static void NotNull(object? obj, string name)
+    public static void NotNull(
+        object? obj,
+        [CallerArgumentExpression(nameof(obj))] string? msg = null
+    )
     {
-        // TODO: I think we can use reflection to get the member name of this obj
-        Debug.Assert(obj != null, $"{name} may not be null.");
+        Debug.Assert(obj != null, $"{msg} may not be null.");
     }
 
     [Conditional("DEBUG")]
-    public static void True([DoesNotReturnIf(false)] bool condition, string name)
+    public static void That(
+        bool condition,
+        [CallerArgumentExpression(nameof(condition))] string? msg = null
+    )
     {
-        Debug.Assert(condition, name);
+        Debug.Assert(condition, $"{msg}. Expected to be truthy.");
+    }
+
+    [Conditional("DEBUG")]
+    public static void True(
+        [DoesNotReturnIf(false)] bool condition,
+        [CallerArgumentExpression("condition")] string? msg = null
+    )
+    {
+        Debug.Assert(condition, msg);
     }
 
     [Conditional("DEBUG")]

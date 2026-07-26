@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Godot;
 
 public static class GDWarn
 {
+    // TODO: move to ConfigWarnBuilder
     [Conditional("DEBUG")]
     public static void HasScript<T>(
         PackedScene packedScene,

@@ -5,8 +5,10 @@ public partial class Hitbox : Area3D
 {
     [Export]
     EnemyHealth health = null!;
-
-    public EnemyHealth Health { get => health; }
+    public EnemyHealth Health
+    {
+        get => health;
+    }
 
     public override void _Ready()
     {

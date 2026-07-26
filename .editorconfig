@@ -2,6 +2,19 @@ root = true
 
 [*]
 charset = utf-8
+end_of_line = lf
+
+[*.c]
+indent_style = space
+indent_size = 4
+# only supported by some formatters. mostly ignored by microsolp default formatters
+max_line_length = 100
+
+trim_trailing_whitespace = true
+insert_final_newline = true
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
 
 # Default severity for analyzer diagnostics with category 'Style'
 # e.g. simplified new (); expressions to = [];

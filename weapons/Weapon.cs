@@ -6,6 +6,9 @@ using Godot;
 public partial class Weapon : Node3D
 {
     [Export]
+    float aim_speed = 8.0f;
+
+    [Export]
     float fire_rate = 1.6f;
 
     [Export]
@@ -102,7 +105,7 @@ public partial class Weapon : Node3D
         AimAt(target, (float)delta);
     }
 
-    void AimAt(Hitbox target, double delta) // Notice 'delta' is now required
+    void AimAt(Hitbox target, double delta)
     {
         Vector3 simulate_same_height_target_pos = new Vector3(
             target.GlobalPosition.X,
@@ -119,8 +122,7 @@ public partial class Weapon : Node3D
         Quaternion currentQuat = pivot.GlobalTransform.Basis.GetRotationQuaternion();
         Quaternion targetQuat = target_transform.Basis.GetRotationQuaternion();
 
-        const float aimSpeed = 8.0f;
-        Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aimSpeed * (float)delta);
+        Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aim_speed * (float)delta);
 
         pivot.GlobalTransform = new Transform3D(new Basis(smoothedQuat), pivot.GlobalPosition);
     }
@@ -142,11 +144,8 @@ public partial class Weapon : Node3D
             .NotNull(range)
             .NotNull(fire_rate_timer)
             .NotNull(pivot)
-            .That(fire_rate > 0)
-            .NotNull(
-                GetNodeOrNull<Timer>("FireRateTimer"),
-                "Missing required child node: 'FireRateTimer' (Timer)."
-            )
+            .That(fire_rate > 0.0f)
+            .That(aim_speed > 10.0f)
             .Build();
     }
 }

@@ -4,26 +4,25 @@
 [ext_resource type="Script" uid="uid://bpc0g1j2kcx51" path="res://weapons/Weapon.cs" id="2_pxh0k"]
 [ext_resource type="PackedScene" uid="uid://cctysd0feao50" path="res://Projectile.tscn" id="3_jfcw2"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_56jbq"]
-height = 1.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_stebd"]
 radius = 2.0
 
-[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("spawn") instance=ExtResource("1_7q3s7")]
+[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("fire_rate_timer", "spawn", "range") instance=ExtResource("1_7q3s7")]
 script = ExtResource("2_pxh0k")
+fire_rate_timer = NodePath("FireRateTimer")
 projectile = ExtResource("3_jfcw2")
 spawn = NodePath("weapon-ballista/arrow/Marker3D")
+range = NodePath("weapon-ballista/arrow/RangeArea")
 
 [node name="weapon-ballista" parent="." index="0" unique_id=652944233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Marker3D" type="Marker3D" parent="weapon-ballista/arrow" parent_id_path=PackedInt32Array(1047374090) index="0" unique_id=1006281060]
 
+[node name="RangeArea" type="Area3D" parent="weapon-ballista/arrow" parent_id_path=PackedInt32Array(1047374090) index="1" unique_id=1007831221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="weapon-ballista/arrow/RangeArea" index="0" unique_id=4590015]
+shape = SubResource("SphereShape3D_stebd")
+
 [node name="FireRateTimer" type="Timer" parent="." index="1" unique_id=1340387383]
 wait_time = 1.6
-
-[node name="RangeArea" type="Area3D" parent="." index="2" unique_id=1007831221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RangeArea" index="0" unique_id=4590015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CylinderShape3D_56jbq")

@@ -8,8 +8,7 @@ public partial class Weapon : Node3D
     [Export]
     float fire_rate = 1.6f;
 
-    // TODO: if we dont let designers drag and drop the timer in here
-    // we might as well just generate the timer from code
+    [Export]
     Timer fire_rate_timer = null!;
 
     [Export]
@@ -18,15 +17,17 @@ public partial class Weapon : Node3D
     [Export]
     Marker3D spawn = null!;
 
+    [Export]
+    Area3D range = null!;
+
     readonly List<Hitbox> targets = new();
 
     public override void _Ready()
     {
-        Area3D range = GetNode<Area3D>("RangeArea");
         range.AreaEntered += OnAreaEnter;
         range.AreaExited += OnAreaExit;
 
-        fire_rate_timer = GetNode<Timer>("FireRateTimer");
+        fire_rate_timer.Autostart = true;
         fire_rate_timer.WaitTime = fire_rate;
         fire_rate_timer.Timeout += OnFire;
 
@@ -104,11 +105,9 @@ public partial class Weapon : Node3D
             .NotNull(projectile)
             .HasScript<Projectile>(projectile)
             .NotNull(spawn)
+            .NotNull(range)
+            .NotNull(fire_rate_timer)
             .That(fire_rate > 0)
-            .NotNull(
-                GetNodeOrNull<Area3D>("RangeArea"), // TODO: improve warn builder
-                "Missing required child node: 'RangeArea' (Area3D)."
-            )
             .NotNull(
                 GetNodeOrNull<Timer>("FireRateTimer"),
                 "Missing required child node: 'FireRateTimer' (Timer)."

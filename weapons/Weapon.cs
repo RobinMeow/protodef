@@ -12,6 +12,9 @@ public partial class Weapon : Node3D
     Timer fire_rate_timer = null!;
 
     [Export]
+    Node3D pivot = null!;
+
+    [Export]
     PackedScene projectile = null!;
 
     [Export]
@@ -50,8 +53,10 @@ public partial class Weapon : Node3D
     void OnFire()
     {
         InvalidateTargets();
-        if (TryGetTarget(out Hitbox target))
-            FireAt(target);
+        if (!TryGetTarget(out Hitbox target))
+            return;
+
+        FireAt(target);
     }
 
     /// <summary>
@@ -89,7 +94,23 @@ public partial class Weapon : Node3D
             targets.Remove(hitbox);
     }
 
-    public override void _Process(double delta) { }
+    public override void _Process(double delta)
+    {
+        if (!TryGetTarget(out Hitbox target)) // TODO: cache curr target
+            return;
+
+        AimAt(target);
+    }
+
+    void AimAt(Hitbox target)
+    {
+        Vector3 simulate_same_height_target_pos = new Vector3(
+            target.GlobalPosition.X,
+            pivot.GlobalPosition.Y, // raise height to our height so the weapon does not pitch forward
+            target.GlobalPosition.Z
+        );
+        pivot.LookAt(simulate_same_height_target_pos, Vector3.Up, useModelFront: true);
+    }
 
     public override void _ExitTree()
     {
@@ -107,6 +128,7 @@ public partial class Weapon : Node3D
             .NotNull(spawn)
             .NotNull(range)
             .NotNull(fire_rate_timer)
+            .NotNull(pivot)
             .That(fire_rate > 0)
             .NotNull(
                 GetNodeOrNull<Timer>("FireRateTimer"),

@@ -7,9 +7,10 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_stebd"]
 radius = 2.0
 
-[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("fire_rate_timer", "spawn", "range") instance=ExtResource("1_7q3s7")]
+[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("fire_rate_timer", "pivot", "spawn", "range") instance=ExtResource("1_7q3s7")]
 script = ExtResource("2_pxh0k")
 fire_rate_timer = NodePath("FireRateTimer")
+pivot = NodePath("weapon-ballista")
 projectile = ExtResource("3_jfcw2")
 spawn = NodePath("weapon-ballista/arrow/Marker3D")
 range = NodePath("weapon-ballista/arrow/RangeArea")
@@ -18,11 +19,14 @@ range = NodePath("weapon-ballista/arrow/RangeArea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Marker3D" type="Marker3D" parent="weapon-ballista/arrow" parent_id_path=PackedInt32Array(1047374090) index="0" unique_id=1006281060]
+transform = Transform3D(1.0000012, 0, -1.1920928e-07, 0, 1, 0, 1.1920928e-07, 0, 1.0000012, -2.328308e-09, 0, -1.3038516e-08)
 
 [node name="RangeArea" type="Area3D" parent="weapon-ballista/arrow" parent_id_path=PackedInt32Array(1047374090) index="1" unique_id=1007831221]
+transform = Transform3D(1.0000012, 0, -1.1920928e-07, 0, 1, 0, 1.1920928e-07, 0, 1.0000012, -2.328308e-09, 0, -1.3038516e-08)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="weapon-ballista/arrow/RangeArea" index="0" unique_id=4590015]
 shape = SubResource("SphereShape3D_stebd")
 
 [node name="FireRateTimer" type="Timer" parent="." index="1" unique_id=1340387383]
 wait_time = 1.6
+autostart = true

@@ -6,10 +6,22 @@ using Godot;
 public partial class Weapon : Node3D
 {
     [Export]
+    float aim_speed = 8.0f;
+
+    [Export]
     float fire_rate = 1.6f;
 
     [Export]
     Timer fire_rate_timer = null!;
+
+    [Export]
+    Node3D pivot_yaw = null!;
+
+    [Export]
+    Node3D pivot_pitch = null!;
+
+    [Export]
+    float max_pitch_radian = 15.0f;
 
     [Export]
     PackedScene projectile = null!;
@@ -27,11 +39,11 @@ public partial class Weapon : Node3D
         range.AreaEntered += OnAreaEnter;
         range.AreaExited += OnAreaExit;
 
-        fire_rate_timer.Autostart = true;
+        // defer starting until the first shot
+        fire_rate_timer.Autostart = false;
+
         fire_rate_timer.WaitTime = fire_rate;
         fire_rate_timer.Timeout += OnFire;
-
-        fire_rate_timer.Start(); // TODO: should only start fireing after first time a target got in range
     }
 
     void OnAreaEnter(Area3D area)
@@ -39,6 +51,13 @@ public partial class Weapon : Node3D
         if (area is Hitbox hitbox)
         {
             targets.Add(hitbox);
+
+            if (fire_rate_timer.IsStopped())
+            {
+                // the first time, there should be no cooldown for the atk speed
+                fire_rate_timer.Start();
+                FireAt(hitbox);
+            }
         }
     }
 
@@ -50,8 +69,10 @@ public partial class Weapon : Node3D
     void OnFire()
     {
         InvalidateTargets();
-        if (TryGetTarget(out Hitbox target))
-            FireAt(target);
+        if (!TryGetTarget(out Hitbox target))
+            return;
+
+        FireAt(target);
     }
 
     /// <summary>
@@ -89,7 +110,71 @@ public partial class Weapon : Node3D
             targets.Remove(hitbox);
     }
 
-    public override void _Process(double delta) { }
+    public override void _Process(double delta)
+    {
+        if (!TryGetTarget(out Hitbox target)) // TODO: cache curr target
+            return;
+
+        AimAt(target, (float)delta);
+    }
+
+    void AimAt(Hitbox target, double delta)
+    {
+        AimYaw();
+        AimPitch();
+
+        void AimYaw()
+        {
+            Vector3 simulate_same_height_target_pos = new Vector3(
+                target.GlobalPosition.X,
+                pivot_yaw.GlobalPosition.Y,
+                target.GlobalPosition.Z
+            );
+            Transform3D target_transform = pivot_yaw.GlobalTransform.LookingAt(
+                simulate_same_height_target_pos,
+                Vector3.Up,
+                useModelFront: true
+            );
+            Quaternion currentQuat = pivot_yaw.GlobalTransform.Basis.GetRotationQuaternion();
+            Quaternion targetQuat = target_transform.Basis.GetRotationQuaternion();
+            Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aim_speed * (float)delta);
+            pivot_yaw.GlobalTransform = new Transform3D(
+                new Basis(smoothedQuat),
+                pivot_yaw.GlobalPosition
+            );
+        }
+
+        void AimPitch()
+        {
+            Transform3D target_vertical_transform = pivot_pitch.GlobalTransform.LookingAt(
+                target.GlobalPosition,
+                Vector3.Up,
+                useModelFront: true
+            );
+
+            Quaternion current_pitch_quat =
+                pivot_pitch.GlobalTransform.Basis.GetRotationQuaternion();
+            Quaternion target_pitch_quat = target_vertical_transform.Basis.GetRotationQuaternion();
+            Quaternion smoothed_pitch_quat = current_pitch_quat.Slerp(
+                target_pitch_quat,
+                aim_speed * (float)delta
+            );
+
+            pivot_pitch.GlobalTransform = new Transform3D(
+                new Basis(smoothed_pitch_quat),
+                pivot_pitch.GlobalPosition
+            );
+
+            // limit pitch angle
+            float maxRad = Mathf.DegToRad(max_pitch_radian);
+            float clamped_x = Mathf.Clamp(pivot_pitch.Rotation.X, -maxRad, maxRad);
+            pivot_pitch.Rotation = new Vector3(
+                clamped_x,
+                pivot_pitch.Rotation.Y,
+                pivot_pitch.Rotation.Z
+            );
+        }
+    }
 
     public override void _ExitTree()
     {
@@ -107,11 +192,10 @@ public partial class Weapon : Node3D
             .NotNull(spawn)
             .NotNull(range)
             .NotNull(fire_rate_timer)
-            .That(fire_rate > 0)
-            .NotNull(
-                GetNodeOrNull<Timer>("FireRateTimer"),
-                "Missing required child node: 'FireRateTimer' (Timer)."
-            )
+            .NotNull(pivot_yaw)
+            .NotNull(pivot_pitch)
+            .That(fire_rate > 0.0f)
+            .That(aim_speed < 10.0f && aim_speed > 0.0f)
             .Build();
     }
 }

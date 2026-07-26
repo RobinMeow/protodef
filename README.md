@@ -44,10 +44,10 @@ tasks can be split it smaller tasks and solved independently. e.g. you can imple
 - [x] units despawn, when they reached the end
 - [x] tower attack/focus system onto the units
 - [x] tower placement
+- [x] [weapon](#weapon)
 - [ ] player health system (lose a health point when an enemy reches the end)
 - [ ] visuals for spawn and player base (assets are available)
 - [ ] [background music](#background-music)
-- [ ] [weapon](#weapon)
 - [ ] [point system](#point-system)
 - [ ] [wave system](#wave-system)
 
@@ -65,8 +65,8 @@ tasks can be split it smaller tasks and solved independently. e.g. you can imple
 
 - [x] add weapon mesh to tower and move spawn pos responsibility to weapon script
 - [x] extract the weapon logic from tower to weapon
-- [ ] **WIP by Ribyn** weapon can be made rotatable (no longer static) and using the LookAt() fn to aim at the unit which is currently has in focus
-- [ ] balista-bow is seprate from the horizntal rotating base so the bow can rotate up/down and the bose horizontally
+- [x] weapon can be made rotatable (no longer static) and using the LookAt() fn to aim at the unit which is currently has in focus
+- [x] balista-bow is seprate from the horizntal rotating base so the bow can rotate up/down and the bose horizontally
 
 > the weapon will be a child node of the tower scene
 

@@ -7,10 +7,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_stebd"]
 radius = 2.0
 
-[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("fire_rate_timer", "pivot", "spawn", "range") instance=ExtResource("1_7q3s7")]
+[node name="Weapon" unique_id=1877133297 node_paths=PackedStringArray("fire_rate_timer", "pivot_yaw", "pivot_pitch", "spawn", "range") instance=ExtResource("1_7q3s7")]
 script = ExtResource("2_pxh0k")
 fire_rate_timer = NodePath("FireRateTimer")
-pivot = NodePath("weapon-ballista")
+pivot_yaw = NodePath("weapon-ballista")
+pivot_pitch = NodePath("weapon-ballista/arrow")
 projectile = ExtResource("3_jfcw2")
 spawn = NodePath("weapon-ballista/arrow/Marker3D")
 range = NodePath("weapon-ballista/arrow/RangeArea")

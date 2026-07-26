@@ -15,7 +15,10 @@ public partial class Weapon : Node3D
     Timer fire_rate_timer = null!;
 
     [Export]
-    Node3D pivot = null!;
+    Node3D pivot_yaw = null!;
+
+    [Export]
+    Node3D pivot_pitch = null!;
 
     [Export]
     PackedScene projectile = null!;
@@ -109,22 +112,22 @@ public partial class Weapon : Node3D
     {
         Vector3 simulate_same_height_target_pos = new Vector3(
             target.GlobalPosition.X,
-            pivot.GlobalPosition.Y,
+            pivot_yaw.GlobalPosition.Y,
             target.GlobalPosition.Z
         );
 
-        Transform3D target_transform = pivot.GlobalTransform.LookingAt(
+        Transform3D target_transform = pivot_yaw.GlobalTransform.LookingAt(
             simulate_same_height_target_pos,
             Vector3.Up,
             useModelFront: true
         );
 
-        Quaternion currentQuat = pivot.GlobalTransform.Basis.GetRotationQuaternion();
+        Quaternion currentQuat = pivot_yaw.GlobalTransform.Basis.GetRotationQuaternion();
         Quaternion targetQuat = target_transform.Basis.GetRotationQuaternion();
 
         Quaternion smoothedQuat = currentQuat.Slerp(targetQuat, aim_speed * (float)delta);
 
-        pivot.GlobalTransform = new Transform3D(new Basis(smoothedQuat), pivot.GlobalPosition);
+        pivot_yaw.GlobalTransform = new Transform3D(new Basis(smoothedQuat), pivot_yaw.GlobalPosition);
     }
 
     public override void _ExitTree()
@@ -143,9 +146,10 @@ public partial class Weapon : Node3D
             .NotNull(spawn)
             .NotNull(range)
             .NotNull(fire_rate_timer)
-            .NotNull(pivot)
+            .NotNull(pivot_yaw)
+            .NotNull(pivot_pitch)
             .That(fire_rate > 0.0f)
-            .That(aim_speed > 10.0f)
+            .That(aim_speed < 10.0f && aim_speed > 0.0f)
             .Build();
     }
 }

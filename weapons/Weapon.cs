@@ -6,7 +6,7 @@ using Godot;
 public partial class Weapon : Node3D
 {
     [Export]
-    float fire_rate = 1f;
+    float fire_rate = 1.6f;
 
     [Export]
     Timer fire_rate_timer = null!;

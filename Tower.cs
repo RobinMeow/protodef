@@ -12,7 +12,7 @@ public partial class Tower : Node3D
     Timer fire_rate_timer = null!;
 
     [Export]
-    PackedScene projectile = null!; // TODO: still require a weapon mesh/component and spawn location
+    PackedScene projectile = null!;
 
     [Export]
     Marker3D projectile_spawn = null!;
@@ -98,20 +98,19 @@ public partial class Tower : Node3D
 
     public override string[] _GetConfigurationWarnings()
     {
-        List<string> warnings = new();
-        if (projectile == null)
-            warnings.Add($"{nameof(projectile)} is not set.");
-        else
-            GDWarn.HasScript<Projectile>(projectile, warnings.Add);
-
-        if (fire_rate_timer == null)
-            warnings.Add($"{nameof(fire_rate_timer)} is not set.");
-        if (projectile_spawn == null)
-            warnings.Add($"{nameof(projectile_spawn)} is not set.");
-        if (GetNodeOrNull<Area3D>("RangeArea") == null)
-            warnings.Add("Missing required child node: 'RangeArea' (Area3D).");
-        if (GetNodeOrNull<Timer>("FireRateTimer") == null)
-            warnings.Add("Missing required child node: 'FireRateTimer' (Timer).");
-        return warnings.ToArray();
+        return new ConfigWarnBuilder()
+            .NotNull(projectile)
+            .NotNull(weapon)
+            .HasScript<Projectile>(projectile)
+            .NotNull(fire_rate_timer)
+            .NotNull(
+                GetNodeOrNull<Area3D>("RangeArea"),
+                "Missing required child node: 'RangeArea' (Area3D)."
+            )
+            .NotNull(
+                GetNodeOrNull<Timer>("FireRateTimer"),
+                "Missing required child node: 'FireRateTimer' (Timer)."
+            )
+            .Build();
     }
 }

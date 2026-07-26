@@ -32,5 +32,56 @@ public sealed class ConfigWarnBuilder
         return this;
     }
 
+    public ConfigWarnBuilder HasScript<T>(
+        PackedScene packedScene,
+        [CallerArgumentExpression(nameof(packedScene))] string arg = ""
+    )
+        where T : Node
+    {
+        if (packedScene == null)
+        {
+            warnings.Add($"{arg} is not set.");
+            return this;
+        }
+
+        SceneState state = packedScene.GetState();
+        if (state.GetNodeCount() == 0)
+        {
+            warnings.Add($"Exported member '{arg}' is empty or corrupted (has no root node).");
+            return this;
+        }
+
+        string expectedName = typeof(T).Name;
+
+        // NOTE: don't think I need this currently for checking script only
+        // if (state.GetNodeType(0) == expectedName)
+        //     return;
+
+        for (int i = 0; i < state.GetNodePropertyCount(0); i++)
+        {
+            if (state.GetNodePropertyName(0, i) == "script")
+            {
+                Script script = state.GetNodePropertyValue(0, i).As<Script>();
+
+                if (
+                    script != null
+                    && script.ResourcePath.EndsWith(
+                        $"{expectedName}.cs",
+                        StringComparison.InvariantCulture
+                    )
+                )
+                {
+                    return this;
+                }
+            }
+        }
+
+        warnings.Add(
+            $"Expected exported member '{arg}' to have '{expectedName}.cs' attached to its root."
+        );
+
+        return this;
+    }
+
     public string[] Build() => warnings.ToArray();
 }

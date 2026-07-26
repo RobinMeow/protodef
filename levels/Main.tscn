@@ -3,6 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cgh8a4oke5687" path="res://assets/tiles.tres" id="1_s5j47"]
 [ext_resource type="Script" uid="uid://1qw1i6mmvldl" path="res://EnemySpawn.cs" id="2_2jfjj"]
 [ext_resource type="PackedScene" uid="uid://bdhp4vwqftesj" path="res://enemy.tscn" id="3_ntnxr"]
+[ext_resource type="PackedScene" uid="uid://cw2kffvhlhhj1" path="res://TowerBuilder.tscn" id="4_ntnxr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2jfjj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,3 +58,6 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1489016733]
 transform = Transform3D(0.9659259, -0.22414388, 0.12940954, -1.4901163e-08, 0.49999997, 0.86602545, -0.25881907, -0.8365164, 0.48296285, 0.7, 4, 3)
+
+[node name="TowerBuilder" parent="." unique_id=289170545 node_paths=PackedStringArray("gridMap") instance=ExtResource("4_ntnxr")]
+gridMap = NodePath("../GridMap")

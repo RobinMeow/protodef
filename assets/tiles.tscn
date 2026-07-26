@@ -1,0 +1,579 @@
+[gd_scene format=4 uid="uid://bbei00mfahp7h"]
+
+[ext_resource type="PackedScene" uid="uid://co1scpfhoi1uy" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-crystal-large.glb" id="1_70ui4"]
+[ext_resource type="PackedScene" uid="uid://rh32pdvuuj8m" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-crystal.glb" id="2_llybf"]
+[ext_resource type="PackedScene" uid="uid://bpilbxi0us8iy" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-dirt-large.glb" id="3_o7ivi"]
+[ext_resource type="PackedScene" uid="uid://cffvacmuj01t3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-dirt.glb" id="4_jiqoj"]
+[ext_resource type="PackedScene" uid="uid://bp42b1oedyt4g" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-rocks-large.glb" id="5_vbugl"]
+[ext_resource type="PackedScene" uid="uid://codevxac5k1ij" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-rocks.glb" id="6_2e764"]
+[ext_resource type="PackedScene" uid="uid://chom3x8vwoad5" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-tree-large.glb" id="7_d5wfc"]
+[ext_resource type="PackedScene" uid="uid://cbashhr4tfe4a" path="res://assets/kenney_tower-defense-kit/Models/GLB format/detail-tree.glb" id="8_ngv2a"]
+[ext_resource type="PackedScene" uid="uid://dudbv7l84be85" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-a-weapon.glb" id="9_dhaet"]
+[ext_resource type="PackedScene" uid="uid://dqidgcfwpcdej" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-a.glb" id="10_oxspv"]
+[ext_resource type="PackedScene" uid="uid://cb8fl5yl8t5qv" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-b-weapon.glb" id="11_jiseu"]
+[ext_resource type="PackedScene" uid="uid://dj3uomjfsqjka" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-b.glb" id="12_7q7u5"]
+[ext_resource type="PackedScene" uid="uid://3c2r5jlsdmp4" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-beam-burst.glb" id="13_qde05"]
+[ext_resource type="PackedScene" uid="uid://dqbjcda71g0mp" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-beam.glb" id="14_0qmwn"]
+[ext_resource type="PackedScene" uid="uid://ci6lrf0v6v4qb" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-c-weapon.glb" id="15_tgvdi"]
+[ext_resource type="PackedScene" uid="uid://utmi74liwh6g" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-c.glb" id="16_h4loy"]
+[ext_resource type="PackedScene" uid="uid://brd23p4kr0cnm" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-d-weapon.glb" id="17_yowt2"]
+[ext_resource type="PackedScene" uid="uid://cpehlujtapqx6" path="res://assets/kenney_tower-defense-kit/Models/GLB format/enemy-ufo-d.glb" id="18_ti17s"]
+[ext_resource type="PackedScene" uid="uid://dc2ol1elts2yt" path="res://assets/kenney_tower-defense-kit/Models/GLB format/selection-a.glb" id="19_kaev3"]
+[ext_resource type="PackedScene" uid="uid://b57qeifk6hs6d" path="res://assets/kenney_tower-defense-kit/Models/GLB format/selection-b.glb" id="20_6wuij"]
+[ext_resource type="PackedScene" uid="uid://ddj6lj42tygp1" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-crystal-large.glb" id="21_fcmjf"]
+[ext_resource type="PackedScene" uid="uid://b370ec1oo7bqk" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-crystal.glb" id="22_i5xqp"]
+[ext_resource type="PackedScene" uid="uid://c2jt5evmdvi53" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-dirt-large.glb" id="23_vfe4q"]
+[ext_resource type="PackedScene" uid="uid://biy8707fi8v5o" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-dirt.glb" id="24_6wbbx"]
+[ext_resource type="PackedScene" uid="uid://bwumooebmd8hn" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-rocks-large.glb" id="25_8tynp"]
+[ext_resource type="PackedScene" uid="uid://1jgopkqt2ou2" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-rocks.glb" id="26_8b4aw"]
+[ext_resource type="PackedScene" uid="uid://ds3ubaakscpom" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-tree-large.glb" id="27_36sns"]
+[ext_resource type="PackedScene" uid="uid://qkxdyh73jlmt" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-detail-tree.glb" id="28_7l8gp"]
+[ext_resource type="PackedScene" uid="uid://c3jvy8w7e6yvf" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-bump.glb" id="29_wiclw"]
+[ext_resource type="PackedScene" uid="uid://bumgxvhi84lik" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-corner-inner.glb" id="30_p1lr5"]
+[ext_resource type="PackedScene" uid="uid://ybwb2m5nhajm" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-corner-large.glb" id="31_6qpyt"]
+[ext_resource type="PackedScene" uid="uid://yadeykwomykq" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-corner-outer.glb" id="32_r5lcn"]
+[ext_resource type="PackedScene" uid="uid://cnhrifjpqfs03" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-corner-round.glb" id="33_nun5o"]
+[ext_resource type="PackedScene" uid="uid://l4q4cq3bgu5i" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-corner-square.glb" id="34_mta80"]
+[ext_resource type="PackedScene" uid="uid://bwclg5nb1g0ty" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-crossing.glb" id="35_egc2c"]
+[ext_resource type="PackedScene" uid="uid://csilbpevukhmb" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-crystal.glb" id="36_uy8qk"]
+[ext_resource type="PackedScene" uid="uid://bwtpb873etfur" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-dirt.glb" id="37_f2lhx"]
+[ext_resource type="PackedScene" uid="uid://bl722u2nflii5" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-end-round.glb" id="38_vcrtk"]
+[ext_resource type="PackedScene" uid="uid://c6sl5t7bhshem" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-end.glb" id="39_fy2w7"]
+[ext_resource type="PackedScene" uid="uid://b1pdisanfuhcj" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-hill.glb" id="40_834pe"]
+[ext_resource type="PackedScene" uid="uid://bhwudg5dlpdir" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-bridge.glb" id="41_ghvrf"]
+[ext_resource type="PackedScene" uid="uid://cxf0c0i41yxvq" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-corner.glb" id="42_hwsuh"]
+[ext_resource type="PackedScene" uid="uid://cfyiwoed8laxc" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-slope-large.glb" id="43_s5ep5"]
+[ext_resource type="PackedScene" uid="uid://b0fv385svxl4c" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-slope.glb" id="44_4fhy5"]
+[ext_resource type="PackedScene" uid="uid://but2ywxi7kgt8" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-straight.glb" id="45_g670e"]
+[ext_resource type="PackedScene" uid="uid://usy461p44un0" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-transition.glb" id="46_l5ud6"]
+[ext_resource type="PackedScene" uid="uid://tbepesyo8iea" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-river-waterfall.glb" id="47_xwavq"]
+[ext_resource type="PackedScene" uid="uid://defdw8oip42vk" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-rock.glb" id="48_v7euc"]
+[ext_resource type="PackedScene" uid="uid://dbexs73g7m1xi" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-slope.glb" id="49_jqpl4"]
+[ext_resource type="PackedScene" uid="uid://u5gonhdl1esd" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-spawn-end-round.glb" id="50_liwnn"]
+[ext_resource type="PackedScene" uid="uid://dqk1n87pn0g84" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-spawn-end.glb" id="51_n8uoj"]
+[ext_resource type="PackedScene" uid="uid://5prd65fahlrn" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-spawn-round.glb" id="52_s3vwy"]
+[ext_resource type="PackedScene" uid="uid://dmsjip0sepnm0" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-spawn.glb" id="53_id1j8"]
+[ext_resource type="PackedScene" uid="uid://be0s2g3ii8wwh" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-split.glb" id="54_uy525"]
+[ext_resource type="PackedScene" uid="uid://nqo5pgpyyfm" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-straight-slope-large.glb" id="55_ikq7l"]
+[ext_resource type="PackedScene" uid="uid://bwa6nlduxoh8t" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-straight-slope.glb" id="56_dhpn3"]
+[ext_resource type="PackedScene" uid="uid://cvghg0v53opmw" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-straight.glb" id="57_hikyx"]
+[ext_resource type="PackedScene" uid="uid://d1o2cv5yyp0t0" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-transition.glb" id="58_kg58b"]
+[ext_resource type="PackedScene" uid="uid://c0lsatpwljdq3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-tree-double.glb" id="59_nptd0"]
+[ext_resource type="PackedScene" uid="uid://lifew4l6li1s" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-tree-quad.glb" id="60_ttnbj"]
+[ext_resource type="PackedScene" uid="uid://cbmj46ocst5dn" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-tree.glb" id="61_yqmmt"]
+[ext_resource type="PackedScene" uid="uid://gdlmoty1cke4" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-wide-corner.glb" id="62_3qth1"]
+[ext_resource type="PackedScene" uid="uid://d3x7io6q8enq8" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-wide-split.glb" id="63_cffff"]
+[ext_resource type="PackedScene" uid="uid://ddnfh2yjdv0p2" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-wide-straight.glb" id="64_s1qi1"]
+[ext_resource type="PackedScene" uid="uid://e71jposv77xb" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-tile-wide-transition.glb" id="65_0305a"]
+[ext_resource type="PackedScene" uid="uid://d2xveyn11g7y8" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-wood-structure-high-part.glb" id="67_n68sy"]
+[ext_resource type="PackedScene" uid="uid://du00jmn251gh4" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-wood-structure-high.glb" id="68_evpgb"]
+[ext_resource type="PackedScene" uid="uid://bwoicdbfi5jl6" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-wood-structure-part.glb" id="69_mqard"]
+[ext_resource type="PackedScene" uid="uid://ci0j71yadcbi7" path="res://assets/kenney_tower-defense-kit/Models/GLB format/snow-wood-structure.glb" id="70_i0gf5"]
+[ext_resource type="PackedScene" uid="uid://0kuy02gabjpv" path="res://assets/kenney_tower-defense-kit/Models/GLB format/spawn-round.glb" id="71_j8r6l"]
+[ext_resource type="PackedScene" uid="uid://cbgjteqxws76w" path="res://assets/kenney_tower-defense-kit/Models/GLB format/spawn-square.glb" id="72_nuhmv"]
+[ext_resource type="PackedScene" uid="uid://brnv5ohiemoql" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-bump.glb" id="73_wpd0r"]
+[ext_resource type="PackedScene" uid="uid://cixo63vh47k15" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-corner-inner.glb" id="74_f1g1s"]
+[ext_resource type="PackedScene" uid="uid://oekuptogqy3y" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-corner-large.glb" id="75_0tidw"]
+[ext_resource type="PackedScene" uid="uid://dd4c6wm2ddyjv" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-corner-outer.glb" id="76_lnww2"]
+[ext_resource type="PackedScene" uid="uid://b6nhb821jciy6" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-corner-round.glb" id="77_8nogx"]
+[ext_resource type="PackedScene" uid="uid://61xfc21owyji" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-corner-square.glb" id="78_03myx"]
+[ext_resource type="PackedScene" uid="uid://dt10ji778vml2" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-crossing.glb" id="79_oojl6"]
+[ext_resource type="PackedScene" uid="uid://bm86pepanr7f6" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-crystal.glb" id="80_qqs2c"]
+[ext_resource type="PackedScene" uid="uid://dcj8ncpw2ig8n" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-dirt.glb" id="81_p6kym"]
+[ext_resource type="PackedScene" uid="uid://bkklfdpd1h3ty" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-end-round.glb" id="82_d852o"]
+[ext_resource type="PackedScene" uid="uid://ck5bu6sw3yddp" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-end.glb" id="83_3kjlg"]
+[ext_resource type="PackedScene" uid="uid://erpsm4g84000" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-hill.glb" id="84_rab3j"]
+[ext_resource type="PackedScene" uid="uid://b3pd68valbfwb" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-bridge.glb" id="85_cvond"]
+[ext_resource type="PackedScene" uid="uid://bw7k8abyo6seb" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-corner.glb" id="86_ihcna"]
+[ext_resource type="PackedScene" uid="uid://dn4xmnekth71f" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-slope-large.glb" id="87_45n1g"]
+[ext_resource type="PackedScene" uid="uid://cbtoymcutumnr" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-slope.glb" id="88_5uncl"]
+[ext_resource type="PackedScene" uid="uid://bwb4ndnsxju8a" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-straight.glb" id="89_mrirl"]
+[ext_resource type="PackedScene" uid="uid://co7okyf6tn8kj" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-transition.glb" id="90_v0iie"]
+[ext_resource type="PackedScene" uid="uid://d1jxs7poxkkxp" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-river-waterfall.glb" id="91_lhs1e"]
+[ext_resource type="PackedScene" uid="uid://cmqrtbvei8585" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-rock.glb" id="92_nfxqb"]
+[ext_resource type="PackedScene" uid="uid://c8rocyok3qdlu" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-slope.glb" id="93_a2wn3"]
+[ext_resource type="PackedScene" uid="uid://cttgp4q13xotv" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-spawn-end-round.glb" id="94_yhtwk"]
+[ext_resource type="PackedScene" uid="uid://bxa60l04f0tlm" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-spawn-end.glb" id="95_t503b"]
+[ext_resource type="PackedScene" uid="uid://bk2uq8lrh2e6g" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-spawn-round.glb" id="96_shf3h"]
+[ext_resource type="PackedScene" uid="uid://bl8raq2mwklm7" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-spawn.glb" id="97_ukfkp"]
+[ext_resource type="PackedScene" uid="uid://b4a0j8bs3w7i3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-split.glb" id="98_1ifg5"]
+[ext_resource type="PackedScene" uid="uid://cn5gm5245vb6g" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-straight-slope-large.glb" id="99_7ooum"]
+[ext_resource type="PackedScene" uid="uid://jaddldjnaapb" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-straight-slope.glb" id="100_fyuuq"]
+[ext_resource type="PackedScene" uid="uid://dtt5u3kur7qww" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-straight.glb" id="101_ft8rj"]
+[ext_resource type="PackedScene" uid="uid://jx2q1pk4exrl" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-transition.glb" id="102_vla41"]
+[ext_resource type="PackedScene" uid="uid://daf706ggket5d" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-tree-double.glb" id="103_xq78y"]
+[ext_resource type="PackedScene" uid="uid://wstnspb7t7nw" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-tree-quad.glb" id="104_7jm18"]
+[ext_resource type="PackedScene" uid="uid://dkhnaspvs8og1" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-tree.glb" id="105_u8x6i"]
+[ext_resource type="PackedScene" uid="uid://e5wj6fcr3jf3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-wide-corner.glb" id="106_5n2h4"]
+[ext_resource type="PackedScene" uid="uid://cj4hlus0jjpdy" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-wide-split.glb" id="107_53fn8"]
+[ext_resource type="PackedScene" uid="uid://ygpwh3urii62" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-wide-straight.glb" id="108_mwu6e"]
+[ext_resource type="PackedScene" uid="uid://chceneljbv5wc" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tile-wide-transition.glb" id="109_lgdss"]
+[ext_resource type="Texture2D" uid="uid://xbieqdo8y7j7" path="res://assets/kenney_tower-defense-kit/Models/GLB format/Textures/colormap.png" id="111_70ui4"]
+[ext_resource type="PackedScene" uid="uid://beoybxj88cm76" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-base.glb" id="111_xyl2h"]
+[ext_resource type="PackedScene" uid="uid://dlkm6wmuwyp88" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-bottom-a.glb" id="112_u2qu0"]
+[ext_resource type="PackedScene" uid="uid://fcbgtaele1hk" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-bottom-b.glb" id="113_g1cb6"]
+[ext_resource type="PackedScene" uid="uid://pmlou05vexr3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-bottom-c.glb" id="114_7foqw"]
+[ext_resource type="PackedScene" uid="uid://byyismyen5p8r" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-a.glb" id="115_veyq7"]
+[ext_resource type="PackedScene" uid="uid://bq6efwa2nvxqu" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-b.glb" id="116_7si0k"]
+[ext_resource type="PackedScene" uid="uid://sukfn0ov05g4" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-c.glb" id="117_ca7f0"]
+[ext_resource type="PackedScene" uid="uid://b5v4yshyjcy41" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-d.glb" id="118_pxyc4"]
+[ext_resource type="PackedScene" uid="uid://cogkru4bvaopk" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-e.glb" id="119_6qlk1"]
+[ext_resource type="PackedScene" uid="uid://bbrryox4isffo" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-build-f.glb" id="120_38raf"]
+[ext_resource type="PackedScene" uid="uid://heuictymo7db" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-crystals.glb" id="121_pxc1k"]
+[ext_resource type="PackedScene" uid="uid://bp08fwpn7ttiu" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-middle-a.glb" id="122_3g63a"]
+[ext_resource type="PackedScene" uid="uid://dseulblthu3ak" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-middle-b.glb" id="123_woy33"]
+[ext_resource type="PackedScene" uid="uid://ffhwmyn44yvs" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-middle-c.glb" id="124_v7qjq"]
+[ext_resource type="PackedScene" uid="uid://k2xukhevncka" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-roof-a.glb" id="125_x1bno"]
+[ext_resource type="PackedScene" uid="uid://cakgm3icl1ma" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-roof-b.glb" id="126_cfqr0"]
+[ext_resource type="PackedScene" uid="uid://bu4wphb870eek" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-roof-c.glb" id="127_lkug3"]
+[ext_resource type="PackedScene" uid="uid://clbqdo5h82wpc" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-top-a.glb" id="128_4nsbu"]
+[ext_resource type="PackedScene" uid="uid://c00st1tuukvtu" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-top-b.glb" id="129_epty5"]
+[ext_resource type="PackedScene" uid="uid://bf6eqccsdwl6l" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-round-top-c.glb" id="130_xytad"]
+[ext_resource type="PackedScene" uid="uid://vud7dvbu4deo" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-bottom-a.glb" id="131_kl8wn"]
+[ext_resource type="PackedScene" uid="uid://bcjhoilba2mbu" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-bottom-b.glb" id="132_se45u"]
+[ext_resource type="PackedScene" uid="uid://blg215o8qqtv3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-bottom-c.glb" id="133_j8n1c"]
+[ext_resource type="PackedScene" uid="uid://ckrewkyr1fkqo" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-build-a.glb" id="134_qia4u"]
+[ext_resource type="PackedScene" uid="uid://bh403gjl7aqlu" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-build-b.glb" id="135_bqft0"]
+[ext_resource type="PackedScene" uid="uid://cejmi88oe0evp" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-build-c.glb" id="136_8i0vh"]
+[ext_resource type="PackedScene" uid="uid://dds8do8blvubd" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-build-d.glb" id="137_sjmua"]
+[ext_resource type="PackedScene" uid="uid://bblmi3v2p24g2" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-build-e.glb" id="138_hs7sj"]
+[ext_resource type="PackedScene" uid="uid://nyreqe0mt7yl" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-build-f.glb" id="139_y3jwq"]
+[ext_resource type="PackedScene" uid="uid://x8m6awmhu1n6" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-middle-a.glb" id="140_u32kn"]
+[ext_resource type="PackedScene" uid="uid://qssu5pbbyren" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-middle-b.glb" id="141_ciomb"]
+[ext_resource type="PackedScene" uid="uid://cnbi2c3xpveh4" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-middle-c.glb" id="142_cw1ap"]
+[ext_resource type="PackedScene" uid="uid://r3lk2vayq5q" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-roof-a.glb" id="143_pvbge"]
+[ext_resource type="PackedScene" uid="uid://civmnh7tc0l6o" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-roof-b.glb" id="144_ht7a5"]
+[ext_resource type="PackedScene" uid="uid://d0s7kvamxqep1" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-roof-c.glb" id="145_w7g1y"]
+[ext_resource type="PackedScene" uid="uid://bgpbun34xcaeq" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-top-a.glb" id="146_eg58i"]
+[ext_resource type="PackedScene" uid="uid://mg7cxvshmd7" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-top-b.glb" id="147_l3juy"]
+[ext_resource type="PackedScene" uid="uid://ck7bwyem1p223" path="res://assets/kenney_tower-defense-kit/Models/GLB format/tower-square-top-c.glb" id="148_lsfet"]
+[ext_resource type="PackedScene" uid="uid://cyivwxpb70ggm" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ammo-arrow.glb" id="149_5xjtj"]
+[ext_resource type="PackedScene" uid="uid://s17saaiol0v4" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ammo-boulder.glb" id="150_1afmy"]
+[ext_resource type="PackedScene" uid="uid://cvvbgep64t4ek" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ammo-bullet.glb" id="151_aapgj"]
+[ext_resource type="PackedScene" uid="uid://wwaer00obf04" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ammo-cannonball.glb" id="152_87gyc"]
+[ext_resource type="PackedScene" uid="uid://ci1qkbl16kq51" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-ballista.glb" id="153_glh3l"]
+[ext_resource type="PackedScene" uid="uid://da240w5gk52jo" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-cannon.glb" id="154_i50i7"]
+[ext_resource type="PackedScene" uid="uid://02xogowc77hk" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-catapult.glb" id="155_r4ofg"]
+[ext_resource type="PackedScene" uid="uid://wxt5kt0ocpik" path="res://assets/kenney_tower-defense-kit/Models/GLB format/weapon-turret.glb" id="156_7fwv6"]
+[ext_resource type="PackedScene" uid="uid://dcaanbv6ds6p3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/wood-structure-high-part.glb" id="157_a1nk0"]
+[ext_resource type="PackedScene" uid="uid://c0o2666ijr5uc" path="res://assets/kenney_tower-defense-kit/Models/GLB format/wood-structure-high.glb" id="158_kq8m7"]
+[ext_resource type="PackedScene" uid="uid://b2uqn28lachs3" path="res://assets/kenney_tower-defense-kit/Models/GLB format/wood-structure-part.glb" id="159_oq5xd"]
+[ext_resource type="PackedScene" uid="uid://d3esg8xos5pjd" path="res://assets/kenney_tower-defense-kit/Models/GLB format/wood-structure.glb" id="160_tgmu2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbo7x"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("111_70ui4")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dxv7t"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.2, 1),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAQAAAAIAAwABAAAAAgABAAMAAQADAAAAAQACAAMAAgAEAAAABAACAAAAAAAEAAUABQAEAAIABAAAAAUABAAFAAIABgAFAAAABQAGAAAAAAAGAAMABgAAAAMABgADAAUAAwAGAAUABQAHAAMAAwAHAAIABwAFAAMABwADAAIAAgAHAAUABwACAAUA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAA//8AAP//AAAAAAAA////////AAAAAAAAAAAAAAAA//8AAAAAAAD/////AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f2xdy"]
+resource_name = "snow-tile_snow-tile"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.2, 1),
+"attribute_data": PackedByteArray("//eY+f/3mPn/95j5//eY+f/3mPn/95j5//eY+f/3mPn/92XG//dlxv/3mPn/95j5//dlxv/3Zcb/95j5//eY+f/3Zcb/95j5//eY+f/3Zcb/95j5//dlxv/3mPn/92XG//eY+f/3mPn/92XG//dlxv/3mPn/95j5//dlxv/3Zcb/92XG//eY+f/3mPn/92XG//eY+f/3Zcb/95j5//dlxv/3Zcb/92XG//dlxv/3Zcb/92XG//dlxv/3Zcb/92XG"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwAGAAUACAAJAAoACgALAAgADAANAA4ADwAOAA0AEAARABIAEgATABAAFAAVABYAFwAWABUAGAAZABoAGgAbABgAHAAdAB4AHwAeAB0AIAAhACIAIgAjACAAJAAlACYAJwAmACUAKAApACoAKgArACgALAAtAC4ALwAuAC0A"),
+"material": SubResource("StandardMaterial3D_dbo7x"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP///7///wAA////v///AAAAAP+/AAAAAAAA/7///wAA////PwAAAAD///8///8AAAAA/z8AAAAAAAD/P/////////+//////wAA/7///wAAAAD/v///AAD///+//////wAAAAD///////8AAP//AAAAAAAA//8AAP//AAD///////8AgP//AAD//wCAAAAAAP//AIAAAP////8AgP//AAD//wAA////////AAAAAAAA//8AAAAA/////wAAAAAAAP///78AAAAAAAD/vwAA//8AAP+/AAD//////78AAAAAAAAAAAAAAAD//wAAAAD//wAAAAAAAP////8AAAAA//8AAP//AAAAAAAA/////wAAAAD///////8AAP//AAAAAAAAAAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAP//AAD///////8AAP////////////8AAP////////////8AAAAAAAD//wAAAAD///////8AAAAA/////wAAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/z//f/8//3//P/9//z//f/9/////f////3////9///////9/////f////3////9//3////9/////f////3////+//3//v/9//7//f/+//3//f////3////9/////f////3//f/9//3//f/9//3//f/9//7//f/+//3//v/9//7//f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dxv7t")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5omgr"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0.2, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.2, 0.5, 0.5, 0.2, -0.5, 0.5, 0, 0.5, 0.5, 0.2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sk205"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("111_70ui4")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q2qq5"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.2, 1),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAQAAAAIAAwABAAAAAgABAAMAAQADAAAAAQACAAMAAgAEAAAABAACAAAAAAAEAAUABQAEAAIABAAAAAUABAAFAAIABgAFAAAABQAGAAAAAAAGAAMABgAAAAMABgADAAUAAwAGAAUABQAHAAMAAwAHAAIABwAFAAMABwADAAIAAgAHAAUABwACAAUA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAA//8AAP//AAAAAAAA////////AAAAAAAAAAAAAAAA//8AAAAAAAD/////AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_62ys3"]
+resource_name = "tile_tile"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.2, 1),
+"attribute_data": PackedByteArray("/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l2WG/5dlhv+XmLn/l5i5/5dlhv+XZYb/l5i5/5eYuf+XZYb/l5i5/5eYuf+XZYb/l5i5/5dlhv+XmLn/l2WG/5eYuf+XmLn/l2WG/5dlhv+XmLn/l5i5/5dlhv+XZYb/l2WG/5eYuf+XmLn/l2WG/5eYuf+XZYb/l5i5/5dlhv+XZYb/l2WG/5dlhv+XZYb/l2WG/5dlhv+XZYb/l2WG"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwAGAAUACAAJAAoACgALAAgADAANAA4ADwAOAA0AEAARABIAEgATABAAFAAVABYAFwAWABUAGAAZABoAGgAbABgAHAAdAB4AHwAeAB0AIAAhACIAIgAjACAAJAAlACYAJwAmACUAKAApACoAKgArACgALAAtAC4ALwAuAC0A"),
+"material": SubResource("StandardMaterial3D_sk205"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP///7///wAA////v///AAAAAP+/AAAAAAAA/7///wAA////PwAAAAD///8///8AAAAA/z8AAAAAAAD/P/////////+//////wAA/7///wAAAAD/v///AAD///+//////wAAAAD///////8AAP//AAAAAAAA//8AAP//AAD///////8AgP//AAD//wCAAAAAAP//AIAAAP////8AgP//AAD//wAA////////AAAAAAAA//8AAAAA/////wAAAAAAAP///78AAAAAAAD/vwAA//8AAP+/AAD//////78AAAAAAAAAAAAAAAD//wAAAAD//wAAAAAAAP////8AAAAA//8AAP//AAAAAAAA/////wAAAAD///////8AAP//AAAAAAAAAAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAP//AAD///////8AAP////////////8AAP////////////8AAAAAAAD//wAAAAD///////8AAAAA/////wAAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/z//f/8//3//P/9//z//f/9/////f////3////9///////9/////f////3////9//3////9/////f////3////+//3//v/9//7//f/+//3//f////3////9/////f////3//f/9//3//f/9//3//f/9//7//f/+//3//v/9//7//f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_q2qq5")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_llybf"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0.2, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.2, 0.5, 0.5, 0.2, -0.5, 0.5, 0, 0.5, 0.5, 0.2, 0.5)
+
+[node name="Tiles" type="Node" unique_id=208128933]
+
+[node name="detail-crystal-large2" parent="." unique_id=126590468 instance=ExtResource("1_70ui4")]
+
+[node name="detail-crystal2" parent="." unique_id=1849298534 instance=ExtResource("2_llybf")]
+
+[node name="detail-dirt-large2" parent="." unique_id=869834233 instance=ExtResource("3_o7ivi")]
+
+[node name="detail-dirt2" parent="." unique_id=2132851595 instance=ExtResource("4_jiqoj")]
+
+[node name="detail-rocks-large2" parent="." unique_id=608724276 instance=ExtResource("5_vbugl")]
+
+[node name="detail-rocks2" parent="." unique_id=111544801 instance=ExtResource("6_2e764")]
+
+[node name="detail-tree-large2" parent="." unique_id=17622334 instance=ExtResource("7_d5wfc")]
+
+[node name="detail-tree2" parent="." unique_id=1881252224 instance=ExtResource("8_ngv2a")]
+
+[node name="enemy-ufo-a-weapon2" parent="." unique_id=503634981 instance=ExtResource("9_dhaet")]
+
+[node name="enemy-ufo-a2" parent="." unique_id=2052183551 instance=ExtResource("10_oxspv")]
+
+[node name="enemy-ufo-b-weapon2" parent="." unique_id=1016896557 instance=ExtResource("11_jiseu")]
+
+[node name="enemy-ufo-b2" parent="." unique_id=991653919 instance=ExtResource("12_7q7u5")]
+
+[node name="enemy-ufo-beam-burst2" parent="." unique_id=2145427548 instance=ExtResource("13_qde05")]
+
+[node name="enemy-ufo-beam2" parent="." unique_id=531929741 instance=ExtResource("14_0qmwn")]
+
+[node name="enemy-ufo-c-weapon2" parent="." unique_id=1961122031 instance=ExtResource("15_tgvdi")]
+
+[node name="enemy-ufo-c2" parent="." unique_id=1905715101 instance=ExtResource("16_h4loy")]
+
+[node name="enemy-ufo-d-weapon2" parent="." unique_id=23364331 instance=ExtResource("17_yowt2")]
+
+[node name="enemy-ufo-d2" parent="." unique_id=1447533192 instance=ExtResource("18_ti17s")]
+
+[node name="selection-a2" parent="." unique_id=668465347 instance=ExtResource("19_kaev3")]
+
+[node name="selection-b2" parent="." unique_id=550080226 instance=ExtResource("20_6wuij")]
+
+[node name="snow-detail-crystal-large2" parent="." unique_id=1811736174 instance=ExtResource("21_fcmjf")]
+
+[node name="snow-detail-crystal2" parent="." unique_id=248454130 instance=ExtResource("22_i5xqp")]
+
+[node name="snow-detail-dirt-large2" parent="." unique_id=1131357298 instance=ExtResource("23_vfe4q")]
+
+[node name="snow-detail-dirt2" parent="." unique_id=1040028754 instance=ExtResource("24_6wbbx")]
+
+[node name="snow-detail-rocks-large2" parent="." unique_id=1761215577 instance=ExtResource("25_8tynp")]
+
+[node name="snow-detail-rocks2" parent="." unique_id=1219243822 instance=ExtResource("26_8b4aw")]
+
+[node name="snow-detail-tree-large2" parent="." unique_id=1954196549 instance=ExtResource("27_36sns")]
+
+[node name="snow-detail-tree2" parent="." unique_id=282364157 instance=ExtResource("28_7l8gp")]
+
+[node name="snow-tile-bump2" parent="." unique_id=1120284153 instance=ExtResource("29_wiclw")]
+
+[node name="snow-tile-corner-inner2" parent="." unique_id=1767821545 instance=ExtResource("30_p1lr5")]
+
+[node name="snow-tile-corner-large2" parent="." unique_id=2052041900 instance=ExtResource("31_6qpyt")]
+
+[node name="snow-tile-corner-outer2" parent="." unique_id=1912577067 instance=ExtResource("32_r5lcn")]
+
+[node name="snow-tile-corner-round2" parent="." unique_id=1434562450 instance=ExtResource("33_nun5o")]
+
+[node name="snow-tile-corner-square2" parent="." unique_id=901108253 instance=ExtResource("34_mta80")]
+
+[node name="snow-tile-crossing2" parent="." unique_id=91145381 instance=ExtResource("35_egc2c")]
+
+[node name="snow-tile-crystal2" parent="." unique_id=1826056761 instance=ExtResource("36_uy8qk")]
+
+[node name="snow-tile-dirt2" parent="." unique_id=637909058 instance=ExtResource("37_f2lhx")]
+
+[node name="snow-tile-end-round2" parent="." unique_id=1457575077 instance=ExtResource("38_vcrtk")]
+
+[node name="snow-tile-end2" parent="." unique_id=661373286 instance=ExtResource("39_fy2w7")]
+
+[node name="snow-tile-hill2" parent="." unique_id=1185523221 instance=ExtResource("40_834pe")]
+
+[node name="snow-tile-river-bridge2" parent="." unique_id=1039719547 instance=ExtResource("41_ghvrf")]
+
+[node name="snow-tile-river-corner2" parent="." unique_id=1504846839 instance=ExtResource("42_hwsuh")]
+
+[node name="snow-tile-river-slope-large2" parent="." unique_id=966520132 instance=ExtResource("43_s5ep5")]
+
+[node name="snow-tile-river-slope2" parent="." unique_id=926243114 instance=ExtResource("44_4fhy5")]
+
+[node name="snow-tile-river-straight2" parent="." unique_id=1830327753 instance=ExtResource("45_g670e")]
+
+[node name="snow-tile-river-transition2" parent="." unique_id=1594173931 instance=ExtResource("46_l5ud6")]
+
+[node name="snow-tile-river-waterfall2" parent="." unique_id=455289473 instance=ExtResource("47_xwavq")]
+
+[node name="snow-tile-rock2" parent="." unique_id=311362324 instance=ExtResource("48_v7euc")]
+
+[node name="snow-tile-slope2" parent="." unique_id=1064828507 instance=ExtResource("49_jqpl4")]
+
+[node name="snow-tile-spawn-end-round2" parent="." unique_id=1001365945 instance=ExtResource("50_liwnn")]
+
+[node name="snow-tile-spawn-end2" parent="." unique_id=729396418 instance=ExtResource("51_n8uoj")]
+
+[node name="snow-tile-spawn-round2" parent="." unique_id=429898169 instance=ExtResource("52_s3vwy")]
+
+[node name="snow-tile-spawn2" parent="." unique_id=1540754231 instance=ExtResource("53_id1j8")]
+
+[node name="snow-tile-split2" parent="." unique_id=77628024 instance=ExtResource("54_uy525")]
+
+[node name="snow-tile-straight-slope-large2" parent="." unique_id=725219909 instance=ExtResource("55_ikq7l")]
+
+[node name="snow-tile-straight-slope2" parent="." unique_id=1557923462 instance=ExtResource("56_dhpn3")]
+
+[node name="snow-tile-straight2" parent="." unique_id=1715910594 instance=ExtResource("57_hikyx")]
+
+[node name="snow-tile-transition2" parent="." unique_id=713425772 instance=ExtResource("58_kg58b")]
+
+[node name="snow-tile-tree-double2" parent="." unique_id=1657585415 instance=ExtResource("59_nptd0")]
+
+[node name="snow-tile-tree-quad2" parent="." unique_id=94499681 instance=ExtResource("60_ttnbj")]
+
+[node name="snow-tile-tree2" parent="." unique_id=284197650 instance=ExtResource("61_yqmmt")]
+
+[node name="snow-tile-wide-corner2" parent="." unique_id=473386510 instance=ExtResource("62_3qth1")]
+
+[node name="snow-tile-wide-split2" parent="." unique_id=1245079132 instance=ExtResource("63_cffff")]
+
+[node name="snow-tile-wide-straight2" parent="." unique_id=2037153472 instance=ExtResource("64_s1qi1")]
+
+[node name="snow-tile-wide-transition2" parent="." unique_id=382271721 instance=ExtResource("65_0305a")]
+
+[node name="snow-tile" type="MeshInstance3D" parent="." unique_id=1416631966]
+mesh = SubResource("ArrayMesh_f2xdy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="snow-tile" unique_id=496563706]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="snow-tile/StaticBody3D" unique_id=1224139523]
+shape = SubResource("ConvexPolygonShape3D_5omgr")
+
+[node name="snow-wood-structure-high-part2" parent="." unique_id=491324548 instance=ExtResource("67_n68sy")]
+
+[node name="snow-wood-structure-high2" parent="." unique_id=582274189 instance=ExtResource("68_evpgb")]
+
+[node name="snow-wood-structure-part2" parent="." unique_id=544197828 instance=ExtResource("69_mqard")]
+
+[node name="snow-wood-structure2" parent="." unique_id=2126626237 instance=ExtResource("70_i0gf5")]
+
+[node name="spawn-round2" parent="." unique_id=1386360793 instance=ExtResource("71_j8r6l")]
+
+[node name="spawn-square2" parent="." unique_id=1769153599 instance=ExtResource("72_nuhmv")]
+
+[node name="tile-bump2" parent="." unique_id=2115409566 instance=ExtResource("73_wpd0r")]
+
+[node name="tile-corner-inner2" parent="." unique_id=1285723740 instance=ExtResource("74_f1g1s")]
+
+[node name="tile-corner-large2" parent="." unique_id=776393567 instance=ExtResource("75_0tidw")]
+
+[node name="tile-corner-outer2" parent="." unique_id=538222551 instance=ExtResource("76_lnww2")]
+
+[node name="tile-corner-round2" parent="." unique_id=1207171006 instance=ExtResource("77_8nogx")]
+
+[node name="tile-corner-square2" parent="." unique_id=921016942 instance=ExtResource("78_03myx")]
+
+[node name="tile-crossing2" parent="." unique_id=1016447735 instance=ExtResource("79_oojl6")]
+
+[node name="tile-crystal2" parent="." unique_id=1156361185 instance=ExtResource("80_qqs2c")]
+
+[node name="tile-dirt2" parent="." unique_id=1211145171 instance=ExtResource("81_p6kym")]
+
+[node name="tile-end-round2" parent="." unique_id=1948148974 instance=ExtResource("82_d852o")]
+
+[node name="tile-end2" parent="." unique_id=846920294 instance=ExtResource("83_3kjlg")]
+
+[node name="tile-hill2" parent="." unique_id=1471210531 instance=ExtResource("84_rab3j")]
+
+[node name="tile-river-bridge2" parent="." unique_id=2144054571 instance=ExtResource("85_cvond")]
+
+[node name="tile-river-corner2" parent="." unique_id=731929566 instance=ExtResource("86_ihcna")]
+
+[node name="tile-river-slope-large2" parent="." unique_id=472451501 instance=ExtResource("87_45n1g")]
+
+[node name="tile-river-slope2" parent="." unique_id=1754773099 instance=ExtResource("88_5uncl")]
+
+[node name="tile-river-straight2" parent="." unique_id=900206014 instance=ExtResource("89_mrirl")]
+
+[node name="tile-river-transition2" parent="." unique_id=491438669 instance=ExtResource("90_v0iie")]
+
+[node name="tile-river-waterfall2" parent="." unique_id=1007557918 instance=ExtResource("91_lhs1e")]
+
+[node name="tile-rock2" parent="." unique_id=1865513112 instance=ExtResource("92_nfxqb")]
+
+[node name="tile-slope2" parent="." unique_id=1535801441 instance=ExtResource("93_a2wn3")]
+
+[node name="tile-spawn-end-round2" parent="." unique_id=605867327 instance=ExtResource("94_yhtwk")]
+
+[node name="tile-spawn-end2" parent="." unique_id=556371381 instance=ExtResource("95_t503b")]
+
+[node name="tile-spawn-round2" parent="." unique_id=1823112532 instance=ExtResource("96_shf3h")]
+
+[node name="tile-spawn2" parent="." unique_id=1660425999 instance=ExtResource("97_ukfkp")]
+
+[node name="tile-split2" parent="." unique_id=206782318 instance=ExtResource("98_1ifg5")]
+
+[node name="tile-straight-slope-large2" parent="." unique_id=486859054 instance=ExtResource("99_7ooum")]
+
+[node name="tile-straight-slope2" parent="." unique_id=1021113425 instance=ExtResource("100_fyuuq")]
+
+[node name="tile-straight2" parent="." unique_id=2050676122 instance=ExtResource("101_ft8rj")]
+
+[node name="tile-transition2" parent="." unique_id=273153338 instance=ExtResource("102_vla41")]
+
+[node name="tile-tree-double2" parent="." unique_id=1431290320 instance=ExtResource("103_xq78y")]
+
+[node name="tile-tree-quad2" parent="." unique_id=1369989605 instance=ExtResource("104_7jm18")]
+
+[node name="tile-tree2" parent="." unique_id=271829517 instance=ExtResource("105_u8x6i")]
+
+[node name="tile-wide-corner2" parent="." unique_id=1603893915 instance=ExtResource("106_5n2h4")]
+
+[node name="tile-wide-split2" parent="." unique_id=1817847003 instance=ExtResource("107_53fn8")]
+
+[node name="tile-wide-straight2" parent="." unique_id=2146926673 instance=ExtResource("108_mwu6e")]
+
+[node name="tile-wide-transition2" parent="." unique_id=533416222 instance=ExtResource("109_lgdss")]
+
+[node name="tower-round-base2" parent="." unique_id=437821730 instance=ExtResource("111_xyl2h")]
+
+[node name="tile" type="MeshInstance3D" parent="." unique_id=1440425805]
+mesh = SubResource("ArrayMesh_62ys3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tile" unique_id=1963822740]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tile/StaticBody3D" unique_id=683897874]
+shape = SubResource("ConvexPolygonShape3D_llybf")
+
+[node name="tower-round-bottom-a2" parent="." unique_id=2015396552 instance=ExtResource("112_u2qu0")]
+
+[node name="tower-round-bottom-b2" parent="." unique_id=893533606 instance=ExtResource("113_g1cb6")]
+
+[node name="tower-round-bottom-c2" parent="." unique_id=1224480583 instance=ExtResource("114_7foqw")]
+
+[node name="tower-round-build-a2" parent="." unique_id=895179369 instance=ExtResource("115_veyq7")]
+
+[node name="tower-round-build-b2" parent="." unique_id=1895580506 instance=ExtResource("116_7si0k")]
+
+[node name="tower-round-build-c2" parent="." unique_id=1156384160 instance=ExtResource("117_ca7f0")]
+
+[node name="tower-round-build-d2" parent="." unique_id=445512672 instance=ExtResource("118_pxyc4")]
+
+[node name="tower-round-build-e2" parent="." unique_id=1667813854 instance=ExtResource("119_6qlk1")]
+
+[node name="tower-round-build-f2" parent="." unique_id=244029171 instance=ExtResource("120_38raf")]
+
+[node name="tower-round-crystals2" parent="." unique_id=1680101197 instance=ExtResource("121_pxc1k")]
+
+[node name="tower-round-middle-a2" parent="." unique_id=350937029 instance=ExtResource("122_3g63a")]
+
+[node name="tower-round-middle-b2" parent="." unique_id=1362433549 instance=ExtResource("123_woy33")]
+
+[node name="tower-round-middle-c2" parent="." unique_id=272302697 instance=ExtResource("124_v7qjq")]
+
+[node name="tower-round-roof-a2" parent="." unique_id=569037003 instance=ExtResource("125_x1bno")]
+
+[node name="tower-round-roof-b2" parent="." unique_id=649765791 instance=ExtResource("126_cfqr0")]
+
+[node name="tower-round-roof-c2" parent="." unique_id=1564934661 instance=ExtResource("127_lkug3")]
+
+[node name="tower-round-top-a2" parent="." unique_id=2081639470 instance=ExtResource("128_4nsbu")]
+
+[node name="tower-round-top-b2" parent="." unique_id=876551408 instance=ExtResource("129_epty5")]
+
+[node name="tower-round-top-c2" parent="." unique_id=706285732 instance=ExtResource("130_xytad")]
+
+[node name="tower-square-bottom-a2" parent="." unique_id=854703661 instance=ExtResource("131_kl8wn")]
+
+[node name="tower-square-bottom-b2" parent="." unique_id=980506557 instance=ExtResource("132_se45u")]
+
+[node name="tower-square-bottom-c2" parent="." unique_id=1228743919 instance=ExtResource("133_j8n1c")]
+
+[node name="tower-square-build-a2" parent="." unique_id=293433950 instance=ExtResource("134_qia4u")]
+
+[node name="tower-square-build-b2" parent="." unique_id=1718859199 instance=ExtResource("135_bqft0")]
+
+[node name="tower-square-build-c2" parent="." unique_id=2120736060 instance=ExtResource("136_8i0vh")]
+
+[node name="tower-square-build-d2" parent="." unique_id=932644047 instance=ExtResource("137_sjmua")]
+
+[node name="tower-square-build-e2" parent="." unique_id=109760124 instance=ExtResource("138_hs7sj")]
+
+[node name="tower-square-build-f2" parent="." unique_id=440832280 instance=ExtResource("139_y3jwq")]
+
+[node name="tower-square-middle-a2" parent="." unique_id=309362944 instance=ExtResource("140_u32kn")]
+
+[node name="tower-square-middle-b2" parent="." unique_id=786760973 instance=ExtResource("141_ciomb")]
+
+[node name="tower-square-middle-c2" parent="." unique_id=1163306680 instance=ExtResource("142_cw1ap")]
+
+[node name="tower-square-roof-a2" parent="." unique_id=290292313 instance=ExtResource("143_pvbge")]
+
+[node name="tower-square-roof-b2" parent="." unique_id=1141783025 instance=ExtResource("144_ht7a5")]
+
+[node name="tower-square-roof-c2" parent="." unique_id=1286395085 instance=ExtResource("145_w7g1y")]
+
+[node name="tower-square-top-a2" parent="." unique_id=1113198513 instance=ExtResource("146_eg58i")]
+
+[node name="tower-square-top-b2" parent="." unique_id=1985436604 instance=ExtResource("147_l3juy")]
+
+[node name="tower-square-top-c2" parent="." unique_id=557445055 instance=ExtResource("148_lsfet")]
+
+[node name="weapon-ammo-arrow2" parent="." unique_id=1290992493 instance=ExtResource("149_5xjtj")]
+
+[node name="weapon-ammo-boulder2" parent="." unique_id=2098487492 instance=ExtResource("150_1afmy")]
+
+[node name="weapon-ammo-bullet2" parent="." unique_id=822447304 instance=ExtResource("151_aapgj")]
+
+[node name="weapon-ammo-cannonball2" parent="." unique_id=1321094076 instance=ExtResource("152_87gyc")]
+
+[node name="weapon-ballista2" parent="." unique_id=1877133297 instance=ExtResource("153_glh3l")]
+
+[node name="weapon-cannon2" parent="." unique_id=1296985330 instance=ExtResource("154_i50i7")]
+
+[node name="weapon-catapult2" parent="." unique_id=1873753168 instance=ExtResource("155_r4ofg")]
+
+[node name="weapon-turret2" parent="." unique_id=1643446824 instance=ExtResource("156_7fwv6")]
+
+[node name="wood-structure-high-part2" parent="." unique_id=1050925093 instance=ExtResource("157_a1nk0")]
+
+[node name="wood-structure-high2" parent="." unique_id=1825044627 instance=ExtResource("158_kq8m7")]
+
+[node name="wood-structure-part2" parent="." unique_id=969841048 instance=ExtResource("159_oq5xd")]
+
+[node name="wood-structure2" parent="." unique_id=568186866 instance=ExtResource("160_tgmu2")]

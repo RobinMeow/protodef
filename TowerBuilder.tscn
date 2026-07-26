@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cw2kffvhlhhj1"]
+
+[ext_resource type="Script" uid="uid://cq2hhsbqk2ecu" path="res://TowerBuilder.cs" id="1_l8pbf"]
+[ext_resource type="PackedScene" uid="uid://dmr7d1wjokt3w" path="res://tower.tscn" id="2_yw5y3"]
+[ext_resource type="PackedScene" uid="uid://b0rsw7e0x2jhf" path="res://hover_selection.tscn" id="2_yy7wt"]
+
+[node name="TowerBuilder" type="Node3D" unique_id=1772093324 node_paths=PackedStringArray("hoverMesh")]
+script = ExtResource("1_l8pbf")
+hoverMesh = NodePath("HoverSelection")
+buildableTileNames = PackedStringArray("tile")
+tower = ExtResource("2_yw5y3")
+
+[node name="HoverSelection" parent="." unique_id=1668420118 instance=ExtResource("2_yy7wt")]
+visible = false

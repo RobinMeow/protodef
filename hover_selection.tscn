@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0rsw7e0x2jhf"]
+
+[ext_resource type="PackedScene" uid="uid://dc2ol1elts2yt" path="res://assets/kenney_tower-defense-kit/Models/GLB format/selection-a.glb" id="1_3fyob"]
+
+[node name="HoverSelection" unique_id=1668420118 instance=ExtResource("1_3fyob")]
+
+[node name="selection-a" parent="." index="0" unique_id=1541008856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)

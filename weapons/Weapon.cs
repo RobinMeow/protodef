@@ -21,6 +21,9 @@ public partial class Weapon : Node3D
     Node3D pivot_pitch = null!;
 
     [Export]
+    float max_pitch_radian = 15.0f;
+
+    [Export]
     PackedScene projectile = null!;
 
     [Export]
@@ -36,11 +39,11 @@ public partial class Weapon : Node3D
         range.AreaEntered += OnAreaEnter;
         range.AreaExited += OnAreaExit;
 
-        fire_rate_timer.Autostart = true;
+        // defer starting until the first shot
+        fire_rate_timer.Autostart = false;
+
         fire_rate_timer.WaitTime = fire_rate;
         fire_rate_timer.Timeout += OnFire;
-
-        fire_rate_timer.Start(); // TODO: should only start fireing after first time a target got in range
     }
 
     void OnAreaEnter(Area3D area)
@@ -48,6 +51,13 @@ public partial class Weapon : Node3D
         if (area is Hitbox hitbox)
         {
             targets.Add(hitbox);
+
+            if (fire_rate_timer.IsStopped())
+            {
+                // the first time, there should be no cooldown for the atk speed
+                fire_rate_timer.Start();
+                FireAt(hitbox);
+            }
         }
     }
 
@@ -153,6 +163,15 @@ public partial class Weapon : Node3D
             pivot_pitch.GlobalTransform = new Transform3D(
                 new Basis(smoothed_pitch_quat),
                 pivot_pitch.GlobalPosition
+            );
+
+            // limit pitch angle
+            float maxRad = Mathf.DegToRad(max_pitch_radian);
+            float clamped_x = Mathf.Clamp(pivot_pitch.Rotation.X, -maxRad, maxRad);
+            pivot_pitch.Rotation = new Vector3(
+                clamped_x,
+                pivot_pitch.Rotation.Y,
+                pivot_pitch.Rotation.Z
             );
         }
     }

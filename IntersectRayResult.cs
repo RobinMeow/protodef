@@ -1,41 +1,22 @@
 using Godot;
 
-public class IntersectRayResult(Godot.Collections.Dictionary dict)
+// NOTE: using class instead of readonly struct, because dotnets .Value and .HasValue design is terrible
+// alternatively you could use a design which lazy loads using methods PointOfIntersection() to read the object only when needed
+// isntead of casting them all, without all in use.
+// could also extend .AsResult() with args to tell which one to eager load .AsResult("Collider", "PointOfIntersection")
+public class IntersectRayResult
 {
-    bool has_intersected_was_called = false;
-    bool has_intersected = false;
-
-    /// <summary>
-    /// Whether or not the ray intersected with something.
-    /// Call this before accessing any of the other methods,
-    /// otherwise an Expection(has_intersected_was_called) is raised (Only in DEBUG).
-    /// </summary>
-    public bool HasIntersected()
+    public IntersectRayResult(Godot.Collections.Dictionary dict)
     {
-        has_intersected_was_called = true;
-        has_intersected = dict.Count > 0;
-        return has_intersected;
+        Assert.True(HasIntersected(dict));
+        PointOfIntersection = (Vector3)dict["position"];
+        Collider = dict["collider"].AsGodotObject();
     }
 
-    public GodotObject CollidingObj()
-    {
-        Assert.That(has_intersected_was_called);
-        Assert.True(
-            has_intersected,
-            $"Don't access {nameof(CollidingObj)} when {nameof(HasIntersected)} returned false."
-        );
-        return dict["collider"].AsGodotObject();
-    }
+    public readonly Vector3 PointOfIntersection;
 
-    public Vector3 PointOfIntersection()
-    {
-        Assert.That(has_intersected_was_called);
-        Assert.True(
-            has_intersected,
-            $"Don't access {nameof(PointOfIntersection)} when {nameof(HasIntersected)} returned false."
-        );
-        return (Vector3)dict["position"];
-    }
+    public readonly GodotObject Collider;
 
     // NOTE: implement other dict fields as needed
+    public static bool HasIntersected(Godot.Collections.Dictionary dict) => dict.Count > 0;
 }

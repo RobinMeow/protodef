@@ -4,9 +4,11 @@ public static class DictionaryExtensions
 {
     extension(Godot.Collections.Dictionary dictionary)
     {
-        public IntersectRayResult ToResult()
+        public IntersectRayResult? AsResult()
         {
-            return new IntersectRayResult(dictionary);
+            return IntersectRayResult.HasIntersected(dictionary)
+                ? new IntersectRayResult(dictionary)
+                : null;
         }
     }
 }

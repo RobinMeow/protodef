@@ -65,15 +65,15 @@ public partial class TowerBuilder : Node3D
 
         var query = PhysicsRayQueryParameters3D.Create(origin, dest);
 
-        var res = world.DirectSpaceState.IntersectRay(query).ToResult();
+        var res = world.DirectSpaceState.IntersectRay(query).AsResult();
 
-        if (!res.HasIntersected() || res.CollidingObj() != gridMap)
+        if (res == null || res.Collider != gridMap)
         {
             cellCoord = default;
             return false;
         }
 
-        Vector3 global_pos = res.PointOfIntersection();
+        Vector3 global_pos = res.PointOfIntersection;
         cellCoord = gridMap.LocalToMap(gridMap.ToLocal(global_pos));
         return true;
     }
